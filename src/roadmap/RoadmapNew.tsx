@@ -346,7 +346,7 @@ function getLayoutedElements(
     }
   });
 
-  tree.chapter.forEach((chapter, ci) => {
+  tree.chapter.forEach((_, ci) => {
     const chapterId = `chapter-${tree.id}-${ci}`;
     const prev = `chapter-${tree.id}-${ci - 1}`;
     if (ci === 0) return;
@@ -393,6 +393,8 @@ export function Roadmap() {
   );
   const [nodes, setNodes, onNodesChange] = useNodesState(layouted.nodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(layouted.edges);
+
+  console.log(setNodes, setEdges);
 
   return (
     <div style={{ width: "100%", height: "90vh" }}>
